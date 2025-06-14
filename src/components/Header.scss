@@ -1,0 +1,125 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  height: 72px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  z-index: 10;
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    img {
+      height: 38px;
+      width: 38px;
+      object-fit: contain;
+      margin-right: 10px;
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+    span {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #222;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    a {
+      color: #888;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0 12px;
+      transition: color 0.2s;
+      &:hover {
+        color: #222;
+      }
+    }
+    .divider {
+      width: 1px;
+      height: 18px;
+      background: #e0e0e0;
+      margin: 0 8px;
+      display: inline-block;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      .dropdown-toggle {
+        background: none;
+        border: none;
+        color: #888;
+        font-size: 0.95rem;
+        font-weight: 500;
+        padding: 0 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        .arrow {
+          margin-left: 4px;
+          font-size: 0.8em;
+        }
+      }
+      .dropdown-menu {
+        position: absolute;
+        top: 38px;
+        right: 0;
+        min-width: 220px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        padding: 12px 0;
+        z-index: 100;
+        .dropdown-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 6px 18px;
+          font-size: 1rem;
+          span {
+            color: #222;
+            font-weight: 500;
+            min-width: 70px;
+            margin-right: 12px;
+          }
+          a {
+            color: #1976d2;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-left: 0;
+            text-decoration: underline;
+            flex-shrink: 0;
+            &:hover {
+              text-decoration: underline;
+              opacity: 0.8;
+            }
+          }
+          a:last-child {
+            margin-left: 16px;
+          }
+        }
+        .dropdown-row + .dropdown-row {
+          border-top: 1px solid #f0f0f0;
+        }
+      }
+    }
+  }
+}

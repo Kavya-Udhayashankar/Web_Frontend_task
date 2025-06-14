@@ -1,0 +1,59 @@
+$image-count: 1; // Number of images in each column
+$image-height: 455px; // Adjust for your design
+$gap: 12px; // No gap between images
+$strip-width: 250px; // Adjust for your design
+$strip-height: ($image-height * $image-count);
+
+.image-strips {
+  display: flex;
+  flex-direction: row;
+  gap: 12px; // No gap between columns
+  height: #{$strip-height};
+  position: relative;
+  z-index: 2;
+
+  .strip {
+    width: $strip-width;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    position: relative;
+
+    .strip-inner {
+      display: flex;
+      flex-direction: column;
+      animation-duration: 12s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    img {
+      width: 100%;
+      height: $image-height;
+      object-fit: cover;
+      margin-bottom: $gap;
+      border-radius: 16px;
+      user-select: none;
+      pointer-events: none;
+      background: #eee;
+      display: block;
+    }
+  }
+
+  .strip1 .strip-inner {
+    animation-name: scrollTopToBottom;
+  }
+  .strip2 .strip-inner {
+    animation-name: scrollBottomToTop;
+  }
+}
+
+@keyframes scrollTopToBottom {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollBottomToTop {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
